@@ -5,6 +5,29 @@
 
 </head>
 <body>
-<h1> This is under construction</h1>
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% for p in post%}
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card">
+            <!--      <img src="..." class="card-img-top" alt="...">-->
+            <div class="card-body">
+                <h5 class="card-title">{{p.title}}</h5>
+                <p class="card-text">{{p.content}}</p>
+                <p>Updated on: {{p.date_updated}}</p><br>
+                <p>Category: {{p.category}}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endfor %}
+{% endblock %}
 </body>
 </html>
